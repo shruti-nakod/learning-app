@@ -25,6 +25,7 @@ export class AppComponent implements AfterViewInit {
       this.playgroundList
     );
 
+    //  More information about JavaScript Array API: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
     this.playgroundList.forEach((p, i) => {
       console.log(`Iterating over queried children at ${i}`, p);
     });
