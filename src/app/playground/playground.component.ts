@@ -10,7 +10,11 @@ export class PlaygroundComponent implements OnInit {
 
   ngOnInit() {}
 
-  get css(): string[] {
-    return ['font-weight-bold', 'text-success'];
+  get css(): object {
+    return {
+      'font-weight-bold': true,
+      'font-italic': false,
+      'text-primary': true
+    };
   }
 }
