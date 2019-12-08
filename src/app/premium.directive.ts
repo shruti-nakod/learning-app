@@ -9,6 +9,6 @@ export class PremiumDirective {
   //  It is not advisable to change the selector of a directive
   //  as it can cause conflicts with HTML attributes of built -in directives
   constructor(private host: ElementRef) {
-    console.log('Directive created', host);
+    this.host.nativeElement.style.color = 'red';
   }
 }
