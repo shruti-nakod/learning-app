@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-directives-demo';
+
+  appHandler() {
+    console.log('AppComponent handler called');
+  }
 }

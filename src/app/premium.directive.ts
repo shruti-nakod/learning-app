@@ -9,8 +9,8 @@ import {
   selector: '[appPremium]'
 })
 export class PremiumDirective {
-  @HostListener('click', ['$event'])
-  handler(args) {
-    console.log('Directive handler', args);
+  @HostListener('click')
+  handler() {
+    console.log('Directive handler called');
   }
 }
