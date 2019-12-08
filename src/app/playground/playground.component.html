@@ -2,6 +2,10 @@
 
 <hr />
 
-<p #para>This is a paragraph</p>
+<input type="text" class="form-control mb-2" [value]="para.textContent" />
 
-<input type="text" class="form-control" [value]="para.textContent" />
+<p [textContent]="para.textContent"></p>
+
+<p>Another: {{ para.textContent }}</p>
+
+<p #para>This is a paragraph</p>
