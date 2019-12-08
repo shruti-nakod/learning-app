@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
+  predicate = true;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    setInterval(() => {
+      this.predicate = !this.predicate;
+    }, 1000);
   }
-
 }
