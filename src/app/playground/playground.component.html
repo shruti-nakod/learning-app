@@ -1,1 +1,21 @@
 <h2>Learning Directives</h2>
+
+<hr />
+
+<div [ngSwitch]="country">
+  <div *ngSwitchCase="'IN'">
+    <div class="alert alert-primary" role="alert">
+      India
+    </div>
+  </div>
+  <div *ngSwitchCase="'FR'">
+    <div class="alert alert-warning" role="alert">
+      France
+    </div>
+  </div>
+  <div *ngSwitchDefault>
+    <div class="alert alert-secondary" role="alert">
+      Default
+    </div>
+  </div>
+</div>
