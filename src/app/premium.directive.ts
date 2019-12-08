@@ -1,17 +1,16 @@
-import { Directive, ElementRef, HostBinding } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener
+} from '@angular/core';
 
 @Directive({
   selector: '[appPremium]'
 })
 export class PremiumDirective {
-  //  @HostBinding('domProperty')
-  @HostBinding('className')
-  get css() {
-    return 'font-weight-bold';
-  }
-
-  @HostBinding('style.color')
-  get color() {
-    return 'blue';
+  @HostListener('click', ['$event'])
+  handler(args) {
+    console.log('Directive handler', args);
   }
 }
