@@ -2,5 +2,8 @@
 
 <hr />
 
-<p *ngIf="predicate">Paragraph triggered by timer</p>
-<p *ngIf="!predicate">Paragraph before the timer triggers</p>
+<p *ngIf="predicate; else elseBlock">Paragraph triggered by timer</p>
+
+<ng-template #elseBlock>
+  <p>Paragraph before the timer triggers</p>
+</ng-template>
