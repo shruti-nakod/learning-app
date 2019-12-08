@@ -1,4 +1,11 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  OnInit,
+  ViewChildren,
+  QueryList,
+  AfterViewInit
+} from '@angular/core';
 import { PlaygroundComponent } from './playground/playground.component';
 
 @Component({
@@ -6,13 +13,20 @@ import { PlaygroundComponent } from './playground/playground.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  @ViewChild(PlaygroundComponent, { static: true })
-  playground: PlaygroundComponent;
+export class AppComponent implements AfterViewInit {
+  @ViewChildren(PlaygroundComponent)
+  playgroundList: QueryList<PlaygroundComponent>;
 
   title = 'ng-directives-demo';
 
-  ngOnInit(): void {
-    console.log('Parent queries the child', this.playground);
+  ngAfterViewInit(): void {
+    console.log(
+      'Parent queries ang gets the children as a list',
+      this.playgroundList
+    );
+
+    this.playgroundList.forEach((p, i) => {
+      console.log(`Iterating over queried children at ${i}`, p);
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -7,7 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
   @ViewChild('para', { static: true }) pElement: ElementRef;
-  counter = 100;
+  @Input() counter;
 
   constructor() {}
 
