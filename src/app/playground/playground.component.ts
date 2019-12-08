@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
+  @ViewChild('para', { static: true }) pElement: ElementRef;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    console.log('<p>', this.pElement);
   }
-
 }
