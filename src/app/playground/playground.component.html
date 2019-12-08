@@ -3,5 +3,5 @@
 <hr />
 
 <ul>
-  <li *ngFor="let city of cities">{{ city }}</li>
+  <li *ngFor="let city of cities; index as i">{{ i }}. {{ city }}</li>
 </ul>
