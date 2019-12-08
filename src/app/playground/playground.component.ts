@@ -6,13 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
-  predicate = false;
+  cities = [
+    'Bengaluru',
+    'Mumbai',
+    'Chennai',
+    'Hyderabad',
+    'New Delhi',
+    'Pune',
+    'Mysuru'
+  ];
 
   constructor() {}
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.predicate = true;
-    }, 5000);
-  }
+  ngOnInit() {}
 }
