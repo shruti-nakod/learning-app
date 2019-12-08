@@ -1,21 +1,21 @@
 <h2>Learning Directives</h2>
 
 <hr />
-
-<div [ngSwitch]="country">
-  <div *ngSwitchCase="'IN'">
+<!-- Using <ng-container> you can save the extra DOM nodes only to provide structure -->
+<ng-container [ngSwitch]="country">
+  <ng-container *ngSwitchCase="'IN'">
     <div class="alert alert-primary" role="alert">
       India
     </div>
-  </div>
-  <div *ngSwitchCase="'FR'">
+  </ng-container>
+  <ng-container *ngSwitchCase="'FR'">
     <div class="alert alert-warning" role="alert">
       France
     </div>
-  </div>
-  <div *ngSwitchDefault>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
     <div class="alert alert-secondary" role="alert">
       Default
     </div>
-  </div>
-</div>
+  </ng-container>
+</ng-container>
