@@ -1,17 +1,18 @@
-import { Directive, ElementRef, HostBinding } from '@angular/core';
+import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: '[appPremium]'
 })
 export class PremiumDirective {
-  //  @HostBinding('domProperty')
-  @HostBinding('className')
-  get css() {
-    return 'font-weight-bold';
+  @Input() set appPremium(value: string) {
+    this.css = value;
   }
 
-  @HostBinding('style.color')
-  get color() {
-    return 'blue';
+  @Input() set dirProperty(value) {
+    console.log('dirProperty set to', value);
   }
+
+  //  @HostBinding('domProperty')
+  @HostBinding('className')
+  css: string;
 }
