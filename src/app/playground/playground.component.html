@@ -2,5 +2,6 @@
 
 <hr />
 
-<p *appIfClone="predicate" class="text-primary">I am here</p>
-<p *appIfClone="!predicate">Where are you?</p>
+<ng-template [appIfClone]="predicate">
+  <p>I am here</p>
+</ng-template>
