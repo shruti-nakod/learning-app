@@ -9,12 +9,4 @@ export class PlaygroundComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  get style(): object {
-    return {
-      color: 'blue',
-      'text-decoration': 'underline',
-      'font-size': '40px'
-    };
-  }
 }

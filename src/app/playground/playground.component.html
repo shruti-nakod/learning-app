@@ -2,4 +2,16 @@
 
 <hr />
 
-<p [ngStyle]="style">This is a paragraph</p>
+<!-- Variant 1: [class]="expression" //  only string -->
+<p [class]="'text-danger'">This is a paragraph 1</p>
+
+<!-- Variant 2: [class.x]="predicate"    //  x is any css class, predicate is boolean -->
+<p [class.font-italic]="true">This is a paragraph 2</p>
+
+<!-- 
+    Note: Although redundant, It is possible to use ngClass and class. 
+    CSS classes are applied in the order and the last class wins in case of conflict.
+-->
+<p [ngClass]="'text-success font-weight-bold'" [class]="'text-danger'">
+  This is a paragraph 1
+</p>
