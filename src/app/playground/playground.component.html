@@ -2,16 +2,19 @@
 
 <hr />
 
-<!-- Variant 1: [class]="expression" //  only string -->
-<p [class]="'text-danger'">This is a paragraph 1</p>
-
-<!-- Variant 2: [class.x]="predicate"    //  x is any css class, predicate is boolean -->
-<p [class.font-italic]="true">This is a paragraph 2</p>
+<!-- As such, style is not a directive but a property binding -->
+<!-- Usage: [style.x]="expression" -->
+<p [style.color]="'blue'">
+  This is a paragraph 1
+</p>
 
 <!-- 
-    Note: Although redundant, It is possible to use ngClass and class. 
-    CSS classes are applied in the order and the last class wins in case of conflict.
+    Note: Although redundant, It is possible to use ngStyle and style.x 
+    Styles are applied in the order and the last style wins in case of conflict.
 -->
-<p [ngClass]="'text-success font-weight-bold'" [class]="'text-danger'">
+<p
+  [ngStyle]="{ color: 'red', border: '1px solid blue' }"
+  [style.color]="'green'"
+>
   This is a paragraph 1
 </p>
