@@ -7,6 +7,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class PlaygroundComponent implements OnInit {
   @ViewChild('para', { static: true }) pElement: ElementRef;
+  counter = 100;
 
   constructor() {}
 
