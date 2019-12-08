@@ -17,4 +17,8 @@ export class PlaygroundComponent implements OnInit {
     this.pElement.nativeElement.style.textDecoration = 'underline';
     this.pElement.nativeElement.style.fontSize = '30px';
   }
+
+  ngAfterViewChecked() {
+    console.log('checked');
+  }
 }

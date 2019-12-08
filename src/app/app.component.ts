@@ -13,20 +13,16 @@ import { PlaygroundComponent } from './playground/playground.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
   @ViewChildren(PlaygroundComponent)
   playgroundList: QueryList<PlaygroundComponent>;
 
   title = 'ng-directives-demo';
 
-  ngAfterViewInit(): void {
-    console.log(
-      'Parent queries ang gets the children as a list',
-      this.playgroundList
-    );
-
+  clickHandler(): void {
     this.playgroundList.forEach((p, i) => {
-      console.log(`Iterating over queried children at ${i}`, p);
+      p.counter *= 2;
+      p.pElement.nativeElement.className = 'font-italic';
     });
   }
 }

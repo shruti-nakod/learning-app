@@ -1,6 +1,11 @@
 <app-navbar></app-navbar>
 
 <div class="container">
+  <button class="btn btn-primary mt-4" (click)="clickHandler()">
+    Mutate Children
+  </button>
+
+  <hr />
   <app-playground [counter]="1"></app-playground>
   <app-playground [counter]="2"></app-playground>
   <app-playground [counter]="3"></app-playground>
