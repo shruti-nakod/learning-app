@@ -1,4 +1,12 @@
-import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  Input,
+  Output,
+  EventEmitter,
+  HostListener
+} from '@angular/core';
 
 @Directive({
   selector: '[appPremium]'
@@ -12,7 +20,17 @@ export class PremiumDirective {
     console.log('dirProperty set to', value);
   }
 
+  @Output() directiveEvent = new EventEmitter();
+
   //  @HostBinding('domProperty')
   @HostBinding('className')
   css: string;
+
+  @HostListener('click')
+  clickHandler() {
+    this.directiveEvent.emit({
+      on: new Date(),
+      message: 'Directive emitted custom event at click'
+    });
+  }
 }
