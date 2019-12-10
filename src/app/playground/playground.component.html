@@ -1,7 +1,7 @@
 <h2>Learning Directives</h2>
 
 <!-- Project all content -->
-<ng-content select="h1"></ng-content>
+<ng-content select="h1" #content></ng-content>
 
 <hr />
 
@@ -10,3 +10,8 @@
 <hr />
 
 <ng-content select=".alert"></ng-content>
+
+<hr />
+
+<!-- content is undefined -->
+<!-- <p>{{ content.textContent }}</p> -->

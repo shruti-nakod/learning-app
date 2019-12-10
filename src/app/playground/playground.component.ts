@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-playground',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playground.component.css']
 })
 export class PlaygroundComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('content', { static: true }) content: ElementRef;
+  constructor() {}
 
   ngOnInit() {
+    console.log('Projected content', this.content);
   }
-
 }
