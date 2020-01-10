@@ -3,5 +3,7 @@
 <hr />
 
 <ul>
-  <li *ngFor="let city of cities; index as i">{{ i }}. {{ city }}</li>
+  <li *ngFor="let city of cities; index as i; first as f; last as l">
+    {{ i }}. {{ city }} <span class="badge badge-primary" *ngIf="f">First</span>
+  </li>
 </ul>
